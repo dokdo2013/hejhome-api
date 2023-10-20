@@ -1,5 +1,5 @@
 # Install packages and build
-FROM node:18-alpine as builder
+FROM node:21-alpine as builder
 
 ENV NODE_ENV build
 
@@ -12,7 +12,7 @@ RUN pnpm i
 RUN pnpm run build
 
 # Copy build to production image
-FROM node:18-alpine
+FROM node:21-alpine
 
 ENV NODE_ENV production
 
